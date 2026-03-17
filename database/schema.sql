@@ -8,7 +8,7 @@ CREATE TABLE transactions (
     category VARCHAR(50) NOT NULL,
     amount DECIMAL(10,2) NOT NULL,
     type ENUM('income','expense') NOT NULL,
-    date DATE NOT NULL,
+    transaction_date DATE NOT NULL,
     description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
