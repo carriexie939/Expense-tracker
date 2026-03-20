@@ -39,6 +39,7 @@ function deleteTransaction(id) {
 }
 document.getElementById("transaction-form").addEventListener("submit", function(e) {
     e.preventDefault();
+    console.log("clicked!");
 
     const newTransaction = {
         title: document.getElementById("title").value,
