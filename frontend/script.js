@@ -29,4 +29,8 @@ function loadTransactions() {
             });
         })
         .catch(error => console.error("Error loading transactions:", error));
-}
+fetch("http://127.0.0.1:8000/transactions")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  });
