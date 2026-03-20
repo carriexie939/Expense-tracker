@@ -34,3 +34,6 @@ fetch("http://127.0.0.1:8000/transactions")
   .then(data => {
     console.log(data);
   });
+function deleteTransaction(id) {
+    console.log("delete id:", id);
+}
