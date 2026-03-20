@@ -37,3 +37,28 @@ fetch("http://127.0.0.1:8000/transactions")
 function deleteTransaction(id) {
     console.log("delete id:", id);
 }
+document.getElementById("transaction-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const newTransaction = {
+        title: document.getElementById("title").value,
+        category: document.getElementById("category").value,
+        amount: parseFloat(document.getElementById("amount").value),
+        type: document.getElementById("type").value,
+        date: document.getElementById("date").value,
+        description: document.getElementById("description").value
+    };
+
+    fetch("http://localhost:8000/transactions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newTransaction)
+    })
+    .then(response => response.json())
+    .then(() => {
+        loadTransactions(); // 刷新表格
+    })
+    .catch(error => console.error("Error:", error));
+});
