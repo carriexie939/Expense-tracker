@@ -8,8 +8,8 @@ app = FastAPI()
 def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
-        user="root",
-        password="xiejiali520",
+        user="expense_user",
+        password="123456",
         database="expense_tracker"
     )
 
