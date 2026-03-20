@@ -62,4 +62,5 @@ document.getElementById("transaction-form").addEventListener("submit", function(
         loadTransactions(); // 刷新表格
     })
     .catch(error => console.error("Error:", error));
+    @app.post("/transactions")
 });
